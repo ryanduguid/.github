@@ -8,12 +8,14 @@ does not ship its own copy of a given file.
 | --- | --- |
 | `CODE_OF_CONDUCT.md` | all repositories |
 | `CONTRIBUTING.md` | repositories without their own contribution guide |
+| `SECURITY.md` | repositories without their own security policy |
 | `.github/ISSUE_TEMPLATE/` | all repositories with issues enabled |
 | `.github/PULL_REQUEST_TEMPLATE.md` | all repositories |
 
 A repository that needs different wording overrides a default simply by
-committing its own file at the same path. `SECURITY.md` is deliberately not
-defaulted here: every repository ships its own disclosure instructions.
+committing its own file at the same path. Repository-specific security policies
+therefore continue to describe their own trust boundaries, while this default
+covers this repository and future repositories that do not yet have one.
 
 ## Why the templates ask about data
 
