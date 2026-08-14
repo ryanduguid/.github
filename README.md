@@ -9,6 +9,7 @@ does not ship its own copy of a given file.
 | `CODE_OF_CONDUCT.md` | all repositories |
 | `CONTRIBUTING.md` | repositories without their own contribution guide |
 | `SECURITY.md` | repositories without their own security policy |
+| `SUPPORT.md` | repositories without their own support guide |
 | `.github/ISSUE_TEMPLATE/` | all repositories with issues enabled |
 | `.github/PULL_REQUEST_TEMPLATE.md` | all repositories |
 
