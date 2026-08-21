@@ -21,7 +21,14 @@ jobs:
       - name: Parse issue forms
         run: |
           python -m pip install "pyyaml==6.0.3"
-          python -c "import pathlib,yaml; paths=list(pathlib.Path('.github/ISSUE_TEMPLATE').glob('*.yml'));
-assert paths, 'no issue forms';
-[yaml.safe_load(p.read_text(encoding='utf-8')) for p in paths];
-print(f'parsed {len(paths)} forms')"
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+
+          paths = sorted(Path(".github/ISSUE_TEMPLATE").glob("*.yml"))
+          if not paths:
+              raise SystemExit("no issue forms under .github/ISSUE_TEMPLATE")
+          for path in paths:
+              yaml.safe_load(path.read_text(encoding="utf-8"))
+          print(f"parsed {len(paths)} forms")
+          PY
