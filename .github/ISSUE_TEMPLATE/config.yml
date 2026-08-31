@@ -1,0 +1,13 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/ryanduguid/.github/blob/main/SECURITY.md
+    about: >-
+      Do not open a public issue. Use the repository's Security tab and
+      "Report a vulnerability", which opens a private advisory. See that
+      repository's SECURITY.md.
+  - name: Tax or accounting advice
+    url: https://www.ato.gov.au/
+    about: >-
+      These repositories are not tax, accounting, legal or financial advice.
+      For a real tax position, go to the ATO or to an engaged adviser.
