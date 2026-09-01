@@ -22,8 +22,7 @@ jobs:
         run: |
           python -m pip install "check-jsonschema==0.38.0"
           check-jsonschema --builtin-schema vendor.github-issue-forms \
-            .github/ISSUE_TEMPLATE/bug_report.yml \
-            .github/ISSUE_TEMPLATE/feature_request.yml
+            $(find .github/ISSUE_TEMPLATE -name '*.yml' ! -name config.yml)
           check-jsonschema --builtin-schema vendor.github-issue-config \
             .github/ISSUE_TEMPLATE/config.yml
           check-jsonschema --builtin-schema vendor.dependabot .github/dependabot.yml
