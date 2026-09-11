@@ -39,6 +39,14 @@ repository's `SECURITY.md`.
   the same pull request. A changed threshold with a stale docstring or an
   unchanged validation check is a half fix.
 - Cite the primary source for any changed number, in the pull request body.
+- Keep AI identities and authorship credits out of commits and pull requests.
+  Preserve correct human identities and routine GitHub or dependency automation.
+  Bot review comments and Ryan's own README disclosure may remain.
+- Pass the required `Attribution policy` check before merging. It runs from the
+  trusted base branch. `Attribution audit` is a separate result for manual and
+  main-branch audits and cannot approve a pull request.
+- Install the attribution workflow and its required check in each new maintained
+  repository. GitHub does not inherit workflow enforcement from this file.
 
 ## What these projects will not do
 
