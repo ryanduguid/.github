@@ -39,8 +39,8 @@ comments, releases) and whenever someone is representing a project in public.
 
 ## Reporting
 
-Report a concern privately to the maintainer through the contact link on
-[github.com/ryanduguid](https://github.com/ryanduguid). Reports are read by the
+Report a concern privately to [ryan@duguid.com.au](mailto:ryan@duguid.com.au).
+Use fabricated examples and omit client files and credentials. Reports are read by the
 maintainer alone and are not shared further without the reporter's agreement,
 except where disclosure is legally required.
 
