@@ -20,7 +20,7 @@ affected repository and follow its `SECURITY.md`.
 
 These repositories provide review aids and examples, not personalised advice
 or an accounting engagement. GitHub issues are not a channel for urgent
-deadlines, lodgments, payments, payroll decisions, legal advice or client
+deadlines, lodgements, payments, payroll decisions, legal advice or client
 support. A qualified adviser must review any real-world conclusion and the
 current primary sources.
 

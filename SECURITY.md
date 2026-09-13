@@ -13,7 +13,7 @@ Include a clear description, reproduction steps using fabricated data, likely
 impact, and any suggested mitigation. Never include client, taxpayer, employee,
 payroll, access-token or other sensitive data.
 
-We will acknowledge a valid report within seven days and coordinate the fix and
+We will acknowledge a valid report within 7 days and coordinate the fix and
 disclosure timeline with the reporter.
 
 If a repository has its own `SECURITY.md`, that repository-specific policy

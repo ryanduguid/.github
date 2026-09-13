@@ -20,16 +20,16 @@ usually cannot be actioned.
 
 For anything that touches a rate, a threshold, a deadline or a calculation,
 cite the primary source: the section of the Act, the legislative instrument,
-the ruling, or the ATO page. "The number looks wrong" is a starting point, not
+the ruling, or the ATO page. 'The number looks wrong' is a starting point, not
 a finding.
 
 Security vulnerabilities do not go in issues. Use the repository's Security tab
-and "Report a vulnerability", which opens a private advisory, and see that
+and 'Report a vulnerability', which opens a private advisory, and see that
 repository's `SECURITY.md`.
 
 ## Pull requests
 
-- Keep it single-purpose. A bug fix plus a reformat is two pull requests.
+- Keep it single-purpose. A bug fix plus a reformat is 2 pull requests.
 - Add a test that fails on the base commit and passes with your change, and say
   which test that is. A green suite proves nothing when the defect was never
   covered.
