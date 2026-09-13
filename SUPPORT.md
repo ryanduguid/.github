@@ -14,7 +14,9 @@ the shape needed to reproduce the problem.
 ## Security vulnerabilities
 
 Do not open a public issue. Use **Security → Report a vulnerability** in the
-affected repository and follow its `SECURITY.md`.
+affected repository and follow its `SECURITY.md`. Where that repository's
+Security tab offers no **Report a vulnerability** button, `SECURITY.md` gives
+the email address to use instead.
 
 ## Accounting, tax and legal questions
 
