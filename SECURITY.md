@@ -6,8 +6,20 @@ Security fixes are applied to the latest version on the default branch.
 
 ## Reporting a vulnerability
 
-Use the affected repository's private vulnerability-reporting feature. Do not
-open a public issue or pull request for a suspected vulnerability.
+Use the affected repository's private vulnerability-reporting feature, under
+**Security** then **Report a vulnerability**. Do not open a public issue or
+pull request for a suspected vulnerability.
+
+That feature is not available on every repository. Where the repository's
+Security tab offers no **Report a vulnerability** button, email
+[ryan@duguid.com.au](mailto:ryan@duguid.com.au) instead, with `SECURITY` in the
+subject line. Email is unencrypted, so send only what the next paragraph
+permits and wait for a private channel before sending anything more.
+
+Most of the repositories without the feature are contribution forks of upstream
+projects. A vulnerability in the upstream code belongs to that project's own
+security policy, so report it there; use the address above only for something
+introduced by this account's changes.
 
 Include a clear description, reproduction steps using fabricated data, likely
 impact, and any suggested mitigation. Never include client, taxpayer, employee,

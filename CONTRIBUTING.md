@@ -25,7 +25,8 @@ a finding.
 
 Security vulnerabilities do not go in issues. Use the repository's Security tab
 and 'Report a vulnerability', which opens a private advisory, and see that
-repository's `SECURITY.md`.
+repository's `SECURITY.md`. Where that button is absent, `SECURITY.md` gives
+the email address to use instead.
 
 ## Pull requests
 
