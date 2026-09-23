@@ -103,6 +103,21 @@ PATTERNS = [
 ]
 RX = [(name, re.compile(p, re.I)) for name, p in PATTERNS]
 
+# Prose credits are intentionally unanchored: the shared policy scans ordinary
+# commit-message prose, not just trailers and footers. Keep the verb nearby so
+# product references such as "use Claude Code as a plugin" remain allowed.
+PROSE_CREDITS = [
+    ("prose credit", re.compile(
+        r"\b" + VENDOR + r"(?:[-_ ]+(?:code|agent|bot))?\b"
+        r"(?:[\s,:;-]+(?:has\s+|was\s+|is\s+)?(?:" + CREDIT_VERB + r"))"
+        r"(?:[\s,:;-]+(?:this|the|a|an|our|my|change|commit|patch|code|work|review|implementation|solution))*",
+        re.I)),
+    ("prose credit", re.compile(
+        r"\b(?:" + CREDIT_VERB + r")\b(?:[\s,:;-]+(?:by|with|using|via))?"
+        r"[\s,:;-]+(?:the\s+)?" + VENDOR + r"(?:[-_ ]+(?:code|agent|bot))?\b",
+        re.I)),
+]
+
 FENCE = re.compile(r"^(?P<indent> {0,3})(?P<fence>`{3,}|~{3,})(?P<info>.*)$")
 
 # A trailer key, so an indented line following one can be read as its
@@ -231,6 +246,11 @@ for number, line in enumerate(lines, 1):
                 if rx.match(reading):
                     hit = "line %d: %s (%s)" % (at, text.strip()[:120], name)
                     break
+            if not hit:
+                for name, rx in PROSE_CREDITS:
+                    if rx.search(reading):
+                        hit = "line %d: %s (%s)" % (at, text.strip()[:120], name)
+                        break
             if hit:
                 break
         if hit:
