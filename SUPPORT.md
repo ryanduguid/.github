@@ -31,3 +31,6 @@ current primary sources.
 These are independently maintained open-source projects. There is no service
 level agreement or guaranteed response time. Clear, focused reports with a
 safe reproduction and current source evidence are the easiest to action.
+
+Security reports follow the repository's `SECURITY.md` instead, including any
+response commitment it makes.
