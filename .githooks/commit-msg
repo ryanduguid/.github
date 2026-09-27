@@ -45,12 +45,7 @@ set -eu
 
 msg_file=$1
 
-for candidate in python3 python; do
-	if command -v "$candidate" >/dev/null 2>&1; then
-		PY=$candidate
-		break
-	fi
-done
+PY=$(command -v python3 || command -v python || true)
 
 if [ -z "${PY:-}" ]; then
 	printf 'commit-msg: no python3 on PATH; cannot check attribution.\n' >&2
