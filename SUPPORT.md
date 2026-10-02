@@ -28,7 +28,7 @@ current primary sources.
 
 ## Response expectations
 
-These are independently maintained open-source projects. There is no service
+These are independently maintained open source projects. There is no service
 level agreement or guaranteed response time. Clear, focused reports with a
 safe reproduction and current source evidence are the easiest to action.
 
