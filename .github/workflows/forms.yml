@@ -33,7 +33,7 @@ jobs:
           check-jsonschema --builtin-schema vendor.dependabot .github/dependabot.yml
       - name: Check the pull request template still has its required headings
         run: |
-          for heading in "## What this changes" "## Why" "## Verification" "## Checklist"; do
+          for heading in "## What this changes" "## Why" "## Verification" "## Final review" "## Checklist"; do
             grep -qxF "$heading" .github/PULL_REQUEST_TEMPLATE.md || {
               echo "Missing heading in .github/PULL_REQUEST_TEMPLATE.md: $heading" >&2
               exit 1

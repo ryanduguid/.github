@@ -19,10 +19,14 @@ public project discussions.
 | `.github/ISSUE_TEMPLATE/bug_report.yml` | The bug form: a data-boundary checkbox, the actual result, the reproduction command and the smallest fabricated input. |
 | `.github/ISSUE_TEMPLATE/feature_request.yml` | The feature or change form: a data-boundary checkbox, the workflow problem it solves, and the proposal. |
 | `.github/ISSUE_TEMPLATE/config.yml` | Turns off blank issues and offers the contact links for a security report and for tax or accounting advice. |
-| `.github/PULL_REQUEST_TEMPLATE.md` | The pull request body: what changes, why with a primary source, the verification commands and their result, and the merge checklist. |
+| `.github/PULL_REQUEST_TEMPLATE.md` | The pull request body: what changes, why with a primary source, verification commands and results, a final review tied to the head commit, and the merge checklist. |
 
 A repository's own copy of any of these files overrides the default, and GitHub
 then ignores the version here for that repository.
+
+The [shared review process](docs/pr-review-process.md) explains the final record
+and the evidence needed to assess reviewer usefulness and cost. Repositories
+with their own templates need to adopt the same fields explicitly.
 
 ## What this repository keeps to itself
 

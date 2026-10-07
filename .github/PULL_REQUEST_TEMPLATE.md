@@ -27,6 +27,18 @@ covered before: say which new test fails on the base commit and passes here.
 ```
 ```
 
+## Final review
+
+<!-- Complete after the last code change. Record the exact head commit reviewed,
+scope, findings and their disposition, checks with evidence, and remaining risks
+or unrun checks. Link a submitted review or local review record. A new commit
+requires review of the affected scope before this record can be reused. -->
+
+- Reviewed head commit:
+- Review record and scope:
+- Findings and disposition:
+- Remaining risks and unrun checks:
+
 ## Checklist
 
 - [ ] No client, taxpayer, employee or payroll data, and no credentials, tokens, tenant IDs or `.env` contents, appear in the diff, the commit messages or this description.
