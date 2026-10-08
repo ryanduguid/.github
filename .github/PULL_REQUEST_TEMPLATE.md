@@ -32,11 +32,15 @@ covered before: say which new test fails on the base commit and passes here.
 <!-- Complete after the last code change. Record the exact head commit reviewed,
 scope, findings and their disposition, checks with evidence, and remaining risks
 or unrun checks. Link a submitted review or local review record. A new commit
-requires review of the affected scope before this record can be reused. -->
+requires review of the affected scope before this record can be reused. Follow
+https://github.com/ryanduguid/.github/blob/main/docs/pr-review-process.md for
+provider results, duplicate runs, coverage gaps and the final merge check. -->
 
 - Reviewed head commit:
+- Review type (self-review or independent):
 - Review record and scope:
 - Findings and disposition:
+- Provider results and coverage gaps:
 - Remaining risks and unrun checks:
 
 ## Checklist
