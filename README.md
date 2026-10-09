@@ -1,5 +1,9 @@
 # Default community health files
 
+[![Codacy code quality](https://app.codacy.com/project/badge/Grade/e1ac7f96416b4b379e8d02ae0c792754?branch=main)](https://app.codacy.com/gh/ryanduguid/.github/dashboard)
+[![forms](https://github.com/ryanduguid/.github/actions/workflows/forms.yml/badge.svg?branch=main)](https://github.com/ryanduguid/.github/actions/workflows/forms.yml)
+[![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-5C2D91.svg?labelColor=04001F)](LICENSE)
+
 GitHub applies these account-level defaults to public repositories owned by
 [@ryanduguid](https://github.com/ryanduguid) when a repository does not provide
 its own version.
