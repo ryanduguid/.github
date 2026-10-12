@@ -1,6 +1,7 @@
 # Default community health files
 
 [![Codacy code quality](https://app.codacy.com/project/badge/Grade/e1ac7f96416b4b379e8d02ae0c792754?branch=main)](https://app.codacy.com/gh/ryanduguid/.github/dashboard)
+[![SonarCloud](https://img.shields.io/sonar/quality_gate/ryanduguid_.github?server=https%3A%2F%2Fsonarcloud.io&label=SonarCloud&labelColor=000000)](https://sonarcloud.io/summary/new_code?id=ryanduguid_.github)
 [![forms](https://github.com/ryanduguid/.github/actions/workflows/forms.yml/badge.svg?branch=main)](https://github.com/ryanduguid/.github/actions/workflows/forms.yml)
 [![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-5C2D91.svg?labelColor=04001F)](LICENSE)
 
