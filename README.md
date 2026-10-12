@@ -4,7 +4,7 @@
 [![SonarCloud](https://img.shields.io/sonar/quality_gate/ryanduguid_.github?server=https%3A%2F%2Fsonarcloud.io&label=SonarCloud&labelColor=000000)](https://sonarcloud.io/summary/new_code?id=ryanduguid_.github)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/ryanduguid/.github/badge)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/.github)
 [![forms](https://github.com/ryanduguid/.github/actions/workflows/forms.yml/badge.svg?branch=main)](https://github.com/ryanduguid/.github/actions/workflows/forms.yml)
-[![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-5C2D91.svg?labelColor=04001F)](LICENSE)
+[![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-66023C.svg?labelColor=000000)](LICENSE)
 
 GitHub applies these account-level defaults to public repositories owned by
 [@ryanduguid](https://github.com/ryanduguid) when a repository does not provide
