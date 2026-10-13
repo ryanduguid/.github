@@ -1,6 +1,7 @@
 # Default community health files
 
 [![forms](https://img.shields.io/github/actions/workflow/status/ryanduguid/.github/forms.yml?branch=main&label=forms&labelColor=000000&style=flat-square)](https://github.com/ryanduguid/.github/actions/workflows/forms.yml)
+[![CodeQL](https://img.shields.io/github/actions/workflow/status/ryanduguid/.github/codeql.yml?branch=main&label=CodeQL&labelColor=000000&style=flat-square)](https://github.com/ryanduguid/.github/actions/workflows/codeql.yml)
 [![SonarCloud](https://img.shields.io/sonar/quality_gate/ryanduguid_.github?server=https%3A%2F%2Fsonarcloud.io&label=SonarCloud&labelColor=000000&style=flat-square)](https://sonarcloud.io/summary/new_code?id=ryanduguid_.github)
 [![Codacy code quality](https://img.shields.io/codacy/grade/e1ac7f96416b4b379e8d02ae0c792754?label=Codacy&labelColor=000000&style=flat-square)](https://app.codacy.com/gh/ryanduguid/.github/dashboard)<br>
 [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/ryanduguid/.github?label=Scorecard&labelColor=000000&style=flat-square)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/.github)<br>
