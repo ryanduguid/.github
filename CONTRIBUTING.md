@@ -24,7 +24,7 @@ the ruling, or the ATO page. 'The number looks wrong' is a starting point, not
 a finding.
 
 Security vulnerabilities do not go in issues. Use the repository's Security tab
-and 'Report a vulnerability', which opens a private advisory, and see that
+and 'Report a vulnerability', which opens a private advisory. Also see that
 repository's `SECURITY.md`. Where that button is absent, `SECURITY.md` gives
 the email address to use instead.
 
@@ -52,7 +52,7 @@ the email address to use instead.
 ## What these projects will not do
 
 They produce evidence for a human reviewer. They do not post journals, move
-money, lodge with the ATO, or replace professional judgement. A contribution
+money, lodge with the ATO or replace professional judgement. A contribution
 that moves the final accounting or tax decision away from a person will be
 declined regardless of how well it is written.
 
