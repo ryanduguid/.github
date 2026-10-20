@@ -5,6 +5,13 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+    # Documentation cannot change the workflows this analyses, and CodeQL is not a
+    # required check here, so a skipped run leaves nothing pending.
+    paths-ignore:
+      - "**/*.md"
+      - "docs/**"
+      - "**/llms.txt"
+      - "**/CITATION.cff"
   schedule:
     - cron: "17 5 * * 1"
   workflow_dispatch:
