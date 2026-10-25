@@ -13,8 +13,8 @@ pull request for a suspected vulnerability.
 That feature is not available on every repository. Where the repository's
 Security tab offers no **Report a vulnerability** button, email
 [ryan@duguid.com.au](mailto:ryan@duguid.com.au) instead, with `SECURITY` in the
-subject line. Email is unencrypted, so send only what the next paragraph
-permits and wait for a private channel before sending anything more.
+subject line. Email is unencrypted, so send only the report content permitted
+below and wait for a private channel before sending anything more.
 
 Most of the repositories without the feature are contribution forks of upstream
 projects. A vulnerability in the upstream code belongs to that project's own
