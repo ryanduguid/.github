@@ -1,4 +1,11 @@
-# Default community health files
+<p align="center">
+  <picture>
+    <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset=".github/assets/banner-phone-light.svg">
+    <source media="(max-width: 600px)" srcset=".github/assets/banner-phone.svg">
+    <source media="(prefers-color-scheme: light)" srcset=".github/assets/banner-light.svg">
+    <img src=".github/assets/banner.svg" width="100%" alt=".github. Default community files for every repository. Pixel art of a signpost with two arrow boards beside the .github wordmark in slab-serif block letters.">
+  </picture>
+</p>
 
 <div align="center">
 
@@ -44,3 +51,7 @@ with their own templates need to adopt the same fields explicitly.
 `.github/dependabot.yml`, `.github/CODEOWNERS`, `LICENSE`, `AGENTS.md` and the
 workflows under `.github/workflows/` apply to this repository only. GitHub does
 not inherit them, so each repository needs its own.
+
+---
+
+<p align="center"><sub>Better call <code>.github</code>.<br>Made in Newcastle, Australia by <a href="https://duguid.com.au/">Ryan Duguid</a>.</sub></p>
