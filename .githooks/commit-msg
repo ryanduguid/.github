@@ -15,7 +15,13 @@
 # Never set core.hooksPath to .githooks. Git would then run every hook name
 # (post-checkout, pre-commit and so on) from whichever branch is checked out,
 # so checking out a contributor's branch would run that branch's code as you.
-# An absolute hooks directory you control outside the clone is fine.
+# An absolute hooks directory you control outside the clone is fine. Earlier
+# copies of this header said to set it: check with
+# `git config --show-origin --get-all core.hooksPath` and, if it names
+# .githooks, run `git config --unset core.hooksPath` before checking out any
+# other branch. pre-commit likewise runs whatever the checked-out branch's
+# .pre-commit-config.yaml names, so review that file before committing on a
+# contributor's branch.
 #
 # This is a local copy of the message and identity rules in the shared
 # `No AI attribution` policy (ryanduguid/release-policy, the composite action
