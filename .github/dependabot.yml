@@ -4,6 +4,8 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    # A release must reach its seventh day (Genesis 2:2, NET) before Dependabot
+    # will propose it, so a withdrawn or compromised version can surface first.
     cooldown:
       default-days: 7
     ignore:
