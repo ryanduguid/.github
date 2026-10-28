@@ -8,6 +8,13 @@ updates:
     # will propose it, so a withdrawn or compromised version can surface first.
     cooldown:
       default-days: 7
+    groups:
+      # init and analyze are separate dependencies to Dependabot but must
+      # move together: a job running one release against the other's config
+      # fails outright. Grouped so the pair can never arrive split.
+      codeql-action:
+        patterns:
+          - "github/codeql-action*"
     ignore:
       # The release-policy pin is an immutable full commit SHA, advanced only
       # by a reviewed re-pin of its workflow family. A Dependabot bump adds an
