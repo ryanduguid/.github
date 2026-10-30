@@ -13,7 +13,7 @@
 [![CodeQL](https://github.com/ryanduguid/.github/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/ryanduguid/.github/actions/workflows/codeql.yml)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ryanduguid_.github&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ryanduguid_.github)
 [![Codacy code quality](https://app.codacy.com/project/badge/Grade/e1ac7f96416b4b379e8d02ae0c792754)](https://app.codacy.com/gh/ryanduguid/.github/dashboard)<br>
-[![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/ryanduguid/.github?label=Scorecard&labelColor=000000&style=flat)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/.github)<br>
+[![OpenSSF Scorecard](https://raw.githubusercontent.com/ryanduguid/.github/badges/ryanduguid/.github.svg)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/.github)<br>
 [![licence: CC BY 4.0](.github/assets/badges/licence.svg)](LICENSE)
 
 </div>
