@@ -1,0 +1,77 @@
+name: Scorecard badges
+
+# GitHub's image proxy times out on img.shields.io, so READMEs show their
+# Scorecard badge from this repository's badges branch, which the proxy does not
+# touch. Shields.io answers this runner directly. A repository without a score
+# keeps its last badge and fails the run.
+on:
+  schedule:
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: scorecard-badges
+  cancel-in-progress: false
+
+jobs:
+  badges:
+    name: Update the Scorecard badges
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Push the badges branch.
+    steps:
+      - name: Fetch the badges and push any change
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          auth="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)"
+          url="https://github.com/${GITHUB_REPOSITORY}.git"
+          git init -q badges
+          cd badges
+          if git -c http.extraheader="$auth" fetch -q --depth 1 "$url" badges 2>/dev/null; then
+            git checkout -q FETCH_HEAD
+          fi
+          status=0
+          while read -r repo label; do
+            mkdir -p "$(dirname "$repo")"
+            if curl -fsS --retry 5 --retry-all-errors --max-time 30 -o new.svg \
+              "https://img.shields.io/ossf-scorecard/github.com/${repo}?label=${label}&labelColor=000000&style=flat" &&
+              grep -q '<title>[^:<]*: [0-9.]*</title>' new.svg; then
+              mv new.svg "${repo}.svg"
+            else
+              echo "::error::No Scorecard score for ${repo}"
+              rm -f new.svg
+              status=1
+            fi
+          done <<'REPOS'
+          EquityBot/DiogenesLamp Scorecard
+          EquityBot/GhostSoap Scorecard
+          EquityBot/Industrious Scorecard
+          NanoNets/Graft openssf%20scorecard
+          ryanduguid/.github Scorecard
+          ryanduguid/Ozzit Scorecard
+          ryanduguid/accounting-review-pipeline Scorecard
+          ryanduguid/au-accounting-hotkeys Scorecard
+          ryanduguid/au-fpa-pack Scorecard
+          ryanduguid/au-tax-legislation-corpus Scorecard
+          ryanduguid/australian-accounting Scorecard
+          ryanduguid/australian-accounting-skills Scorecard
+          ryanduguid/github-agent-skills Scorecard
+          ryanduguid/llm-tax-guardrails Scorecard
+          ryanduguid/release-policy Scorecard
+          ryanduguid/ryanduguid.github.io Scorecard
+          REPOS
+          git add -A
+          if git rev-parse -q --verify FETCH_HEAD >/dev/null && git diff --cached --quiet FETCH_HEAD; then
+            echo "Badges unchanged."
+            exit "$status"
+          fi
+          git checkout -q --orphan badges
+          git -c user.name="github-actions[bot]" \
+            -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Update the Scorecard badges"
+          git -c http.extraheader="$auth" push -q --force "$url" badges
+          exit "$status"
