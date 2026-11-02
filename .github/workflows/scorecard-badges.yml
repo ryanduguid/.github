@@ -58,6 +58,12 @@ jobs:
           EquityBot/DiogenesLamp Scorecard
           EquityBot/GhostSoap Scorecard
           EquityBot/Alcuin Scorecard
+          EquityBot/ApollinaireASCII Scorecard
+          EquityBot/GrievousGreps Scorecard
+          EquityBot/Laconic Scorecard
+          EquityBot/PascalsLetter Scorecard
+          EquityBot/PlutarchPages Scorecard
+          EquityBot/Puritanical Scorecard
           NanoNets/Graft openssf%20scorecard
           ryanduguid/.github Scorecard
           ryanduguid/Ozzit Scorecard
