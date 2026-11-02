@@ -16,10 +16,34 @@ jobs:
   yaml:
     timeout-minutes: 30
     runs-on: ubuntu-latest
+    env:
+      ACTIONLINT_VERSION: "1.7.12"
+      ACTIONLINT_SHA256: "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8"
+      SHELLCHECK_VERSION: "0.11.0"
+      # Computed from the v0.11.0 release tarball at pin time; koalaman
+      # publishes no checksums file.
+      SHELLCHECK_SHA256: "8c3be12b05d5c177a04c29e3c78ce89ac86f1595681cab149b65b97c4e227198"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Download and verify shellcheck
+        run: |
+          set -euo pipefail
+          curl --proto '=https' --proto-redir '=https' -sSLO "https://github.com/koalaman/shellcheck/releases/download/v${SHELLCHECK_VERSION}/shellcheck-v${SHELLCHECK_VERSION}.linux.x86_64.tar.xz"
+          echo "${SHELLCHECK_SHA256}  shellcheck-v${SHELLCHECK_VERSION}.linux.x86_64.tar.xz" | sha256sum --check
+          tar -xJf "shellcheck-v${SHELLCHECK_VERSION}.linux.x86_64.tar.xz" "shellcheck-v${SHELLCHECK_VERSION}/shellcheck"
+      - name: Shellcheck the commit-msg hook and its test
+        run: |
+          "./shellcheck-v${SHELLCHECK_VERSION}/shellcheck" -x .githooks/commit-msg tests/test_commit_msg_hook.sh
+      - name: Download and verify actionlint
+        run: |
+          set -euo pipefail
+          curl --proto '=https' --proto-redir '=https' -sSLO "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          echo "${ACTIONLINT_SHA256}  actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz" | sha256sum --check
+          tar -xzf "actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz" actionlint
+      - name: Lint the workflows with actionlint
+        run: ./actionlint -shellcheck "./shellcheck-v${SHELLCHECK_VERSION}/shellcheck"
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"
