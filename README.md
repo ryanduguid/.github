@@ -16,6 +16,8 @@
 [![OpenSSF Scorecard](https://raw.githubusercontent.com/ryanduguid/.github/badges/ryanduguid/.github.svg)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/.github)<br>
 [![licence: CC BY 4.0](.github/assets/badges/licence.svg)](LICENSE)
 
+[What a repository inherits](#what-a-repository-inherits) · [Scorecard badges](#scorecard-badges) · [What this repository keeps](#what-this-repository-keeps-to-itself) · [Licence](#licence)
+
 </div>
 
 GitHub applies these account-level defaults to every repository owned by
@@ -66,6 +68,10 @@ not inherit them, so each repository needs its own.
 of the hook and its test in
 [release-policy](https://github.com/ryanduguid/release-policy). The `hook`
 workflow runs the test on every pull request and push to `main`.
+
+## Licence
+
+Licensed under the Creative Commons Attribution 4.0 International licence (CC BY 4.0); see [LICENSE](LICENSE).
 
 ---
 
