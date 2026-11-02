@@ -62,6 +62,11 @@ the run. To give a new repository a badge, add it to the list in that workflow.
 workflows under `.github/workflows/` apply to this repository only. GitHub does
 not inherit them, so each repository needs its own.
 
+`.githooks/commit-msg` and `tests/test_commit_msg_hook.sh` are unchanged copies
+of the hook and its test in
+[release-policy](https://github.com/ryanduguid/release-policy). The `hook`
+workflow runs the test on every pull request and push to `main`.
+
 ---
 
 <p align="center"><sub>Better call <code>.github</code>.<br>Made in Newcastle, Australia by <a href="https://duguid.com.au/">Ryan Duguid</a>.</sub></p>

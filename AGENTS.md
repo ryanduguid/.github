@@ -9,5 +9,8 @@ For issue-form or chooser changes, use the schemas and exact validation commands
 in [forms.yml](.github/workflows/forms.yml). Before handoff, validate affected
 files and report any schema checks not run.
 
+Update `.githooks/commit-msg` and `tests/test_commit_msg_hook.sh` together from
+one release-policy commit, then run `bash tests/test_commit_msg_hook.sh`.
+
 This `AGENTS.md` governs work in this repository. It does not install agent
 instructions in the other repositories that use the community defaults.
