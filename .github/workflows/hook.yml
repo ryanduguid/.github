@@ -1,0 +1,26 @@
+name: hook
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  commit-msg:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # The hook and its test are unchanged copies of release-policy's; update
+      # both from the same release-policy commit.
+      - name: Test the commit-msg hook
+        run: bash tests/test_commit_msg_hook.sh
