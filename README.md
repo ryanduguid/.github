@@ -18,9 +18,10 @@
 
 </div>
 
-GitHub applies these account-level defaults to public repositories owned by
-[@ryanduguid](https://github.com/ryanduguid) when a repository does not provide
-its own version.
+GitHub applies these account-level defaults to every repository owned by
+[@ryanduguid](https://github.com/ryanduguid), public or private, that does not
+provide its own version. The defaults do not appear in that repository's file
+browser or Git history.
 
 The issue and pull request templates require fabricated examples and keep
 client, taxpayer, employee, payroll, credential and other sensitive data out of
@@ -45,6 +46,15 @@ then ignores the version here for that repository.
 The [shared review process](docs/pr-review-process.md) explains the final record
 and the evidence needed to assess reviewer usefulness and cost. Repositories
 with their own templates need to adopt the same fields explicitly.
+
+## Scorecard badges
+
+The OpenSSF Scorecard badges in the account's READMEs are SVGs on this
+repository's `badges` branch. GitHub's image proxy times out on Shields.io, so
+`.github/workflows/scorecard-badges.yml` fetches each listed repository's badge
+from Shields.io once a day and commits any change to that branch as a single
+replacement commit. A repository with no score keeps its last badge and fails
+the run. To give a new repository a badge, add it to the list in that workflow.
 
 ## What this repository keeps to itself
 
