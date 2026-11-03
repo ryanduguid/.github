@@ -24,3 +24,25 @@ jobs:
       # both from the same release-policy commit.
       - name: Test the commit-msg hook
         run: bash tests/test_commit_msg_hook.sh
+
+  # Not a required check, so a hook change in release-policy flags these copies
+  # without blocking unrelated pull requests here.
+  parity:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Compare the hook and its test with release-policy's main
+        run: |
+          set -euo pipefail
+          for file in .githooks/commit-msg tests/test_commit_msg_hook.sh; do
+            curl --proto '=https' --proto-redir '=https' -fsSL --retry 5 --retry-all-errors --max-time 30 \
+              --create-dirs -o "$RUNNER_TEMP/release-policy/$file" \
+              "https://raw.githubusercontent.com/ryanduguid/release-policy/main/$file"
+            if ! cmp "$RUNNER_TEMP/release-policy/$file" "$file"; then
+              echo "::error file=$file::$file differs from release-policy's main; copy the hook and its test from one release-policy commit"
+              exit 1
+            fi
+          done
