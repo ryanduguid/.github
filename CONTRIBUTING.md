@@ -58,9 +58,6 @@ money, lodge with the ATO or replace professional judgement. A contribution
 that moves the final accounting or tax decision away from a person will be
 declined regardless of how well it is written.
 
-Nothing here is tax, accounting, legal or financial advice, and no thread in
-these repositories creates a professional engagement.
-
 ## Expectations
 
 One maintainer, working on this outside business hours from Newcastle, NSW.

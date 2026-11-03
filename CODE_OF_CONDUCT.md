@@ -24,14 +24,6 @@ meeting: disagree about the work, not about the person.
 - Sustained disruption: repeatedly reopening a settled decision, or arguing a
   point already answered with a source.
 
-## Professional-advice boundary
-
-Nothing in these repositories is tax, accounting, legal or financial advice, and
-no issue or pull request thread creates a professional engagement. Requests for
-personal advice on a real tax position will be declined, not because the
-question is unwelcome, but because answering it responsibly requires an engaged
-adviser with the full facts.
-
 ## Scope
 
 This applies in every project space (issues, pull requests, discussions, commit
