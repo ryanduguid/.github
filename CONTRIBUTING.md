@@ -17,6 +17,8 @@ fabricated values, or describe the shape of the data instead of the data.
 Use the issue forms. The bug form asks for the reproduction command and the
 smallest fabricated input that still shows the problem; a report without one
 usually cannot be actioned.
+A wrong statement in a page, guide or skill goes in the content correction
+form instead, with the exact wording and the primary source.
 
 For anything that touches a rate, a threshold, a deadline or a calculation,
 cite the primary source: the section of the Act, the legislative instrument,

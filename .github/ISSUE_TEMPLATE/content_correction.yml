@@ -1,0 +1,56 @@
+name: Content correction
+description: A page, guide or skill states a rate, threshold, date or rule wrongly, or cites a superseded source.
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for wrong statements in prose: a web page, a guide, a
+        skill or a README. For a wrong number or file from a command, use the
+        bug form, which asks for a reproduction.
+
+        Do not paste client, taxpayer, employee or payroll data, or credentials.
+
+  - type: checkboxes
+    id: data-boundary
+    attributes:
+      label: Data boundary
+      options:
+        - label: This report contains no client, taxpayer, employee or payroll data and no credentials.
+          required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Where
+      description: The page address or file path, and the heading or line number.
+    validations:
+      required: true
+
+  - type: textarea
+    id: statement
+    attributes:
+      label: What it says
+      description: Quote the wrong statement exactly.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: What it should say
+      description: >
+        The correct position and its primary source: the section of the Act,
+        the legislative instrument, the ruling, the standard or the ATO page,
+        with the date you read it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else
+      description: Other pages with the same error, or when the rule changed.
+    validations:
+      required: false
