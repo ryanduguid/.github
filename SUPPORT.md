@@ -7,6 +7,9 @@ then provide the smallest reproduction you can make with fabricated data. Name
 the repository version or commit, your operating system, the command you ran,
 the result you expected and the result you received.
 
+For a wrong rate, threshold, date or rule in a page, guide or skill, use the
+content correction form: quote the statement and cite the primary source.
+
 Do not attach or paste client, taxpayer, employee, payroll, tenant, credential
 or other sensitive data. Replace it with synthetic values that preserve only
 the shape needed to reproduce the problem.
