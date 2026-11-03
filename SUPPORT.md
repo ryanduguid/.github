@@ -21,14 +21,6 @@ affected repository and follow its `SECURITY.md`. Where that repository's
 Security tab offers no **Report a vulnerability** button, `SECURITY.md` gives
 the email address to use instead.
 
-## Accounting, tax and legal questions
-
-These repositories provide review aids and examples, not personalised advice
-or an accounting engagement. GitHub issues are not a channel for urgent
-deadlines, lodgements, payments, payroll decisions, legal advice or client
-support. A qualified adviser must review any real-world conclusion and the
-current primary sources.
-
 ## Response expectations
 
 These are independently maintained open source projects. There is no service
@@ -37,3 +29,5 @@ safe reproduction and current source evidence are the easiest to action.
 
 Security reports follow the repository's `SECURITY.md` instead, including any
 response commitment it makes.
+
+<sub>Not advice: these repositories provide review aids and examples, not tax, accounting, legal or financial advice, and no issue or pull request creates a professional engagement. Requests for advice on a real tax position are declined, and issues are not a channel for deadlines, lodgements, payments, payroll decisions or client support. A qualified adviser must review any real-world conclusion against current primary sources.</sub>
