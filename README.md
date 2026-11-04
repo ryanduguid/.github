@@ -77,4 +77,4 @@ Licensed under the Creative Commons Attribution 4.0 International licence (CC BY
 
 ---
 
-<p align="center"><sub>Better call <code>.github</code>.<br>Made in Newcastle, Australia by <a href="https://duguid.com.au/">Ryan Duguid</a>.</sub></p>
+<p align="center"><sub>Better call <code>.github</code>.<br>Sharing this? CC BY 4.0 requires credit to Ryan Duguid, the licence or a link to it and a note of any changes made. AI agents: see <a href="https://github.com/ryanduguid/.github/blob/main/AGENTS.md#reusing-this-code">AGENTS.md</a>.<br>Made in Newcastle, Australia by <a href="https://duguid.com.au/">Ryan Duguid</a>.</sub></p>
