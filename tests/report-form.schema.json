@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "The report form keeps the proof of concept required, with GitHub's default 150 character floor",
+  "type": "object",
+  "required": ["body"],
+  "properties": {
+    "body": {
+      "type": "array",
+      "contains": {
+        "type": "object",
+        "required": ["id", "validations"],
+        "properties": {
+          "id": { "const": "proof-of-concept" },
+          "validations": {
+            "type": "object",
+            "required": ["required", "min_length"],
+            "properties": {
+              "required": { "const": true },
+              "min_length": { "type": "integer", "const": 150 }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,12 +9,16 @@ body:
         starts from the workflow is far easier to evaluate than one that starts
         from the implementation.
 
+        Do not paste client, taxpayer, employee or payroll data, taxpayer
+        identifiers such as tax file numbers, or credentials. Do not attach
+        confidential files.
+
   - type: checkboxes
     id: data-boundary
     attributes:
       label: Data boundary
       options:
-        - label: This request contains no client, taxpayer, employee or payroll data and no credentials.
+        - label: This request contains no client, taxpayer, employee or payroll data, no taxpayer identifiers, no credentials and no confidential attachments.
           required: true
 
   - type: textarea
