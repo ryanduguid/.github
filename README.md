@@ -30,10 +30,17 @@ GitHub applies these account-level defaults to every repository owned by
 @ryanduguid, public or private, that does not provide its own version. The
 defaults do not appear in that repository's file browser or Git history.
 
-The issue and pull request templates require fabricated examples and keep
-client, taxpayer, employee, payroll, credential and other sensitive data out of
-public project discussions. The issue forms and the private vulnerability report
-form also refuse taxpayer identifiers and confidential files.
+Private repositories differ in 2 ways. GitHub enforces required form fields only
+in public repositories, and the private vulnerability report form works only
+where private vulnerability reporting is on, which GitHub documents for public
+repositories.
+
+The issue and pull request templates ask for fabricated examples and ask people
+to keep client, taxpayer, employee, payroll, credential and other sensitive data
+out of public project discussions. The issue forms and the private vulnerability
+report form also ask them not to send taxpayer identifiers or confidential
+files. This wording guides reporters; it enforces nothing, because a form cannot
+check what someone pastes.
 
 ## What a repository inherits
 
