@@ -44,7 +44,7 @@ check what someone pastes.
 
 ## What a repository inherits
 
-A `ryanduguid` repository without its own copy inherits 11 files from `.github`:
+A `ryanduguid` repository can inherit up to 11 files from `.github`, subject to its own copies and the GitHub limits below:
 
 | File | What it does |
 | --- | --- |
