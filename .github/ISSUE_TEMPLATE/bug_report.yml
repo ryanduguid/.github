@@ -8,7 +8,8 @@ body:
         Before you fill this in: strip the data.
 
         Do not paste a real trial balance, payroll export, employee record,
-        client name, ABN, TFN, tenant ID, token or API key into this form.
+        client name, ABN, taxpayer identifiers such as tax file numbers, tenant
+        ID, token or API key into this form. Do not attach confidential files.
         Reproduce with fabricated values, or describe the shape of the data
         (column headers, row counts, value ranges) instead of the data.
 
@@ -17,7 +18,7 @@ body:
     attributes:
       label: Data boundary
       options:
-        - label: This report contains no client, taxpayer, employee or payroll data and no credentials.
+        - label: This report contains no client, taxpayer, employee or payroll data, no taxpayer identifiers, no credentials and no confidential attachments.
           required: true
 
   - type: textarea

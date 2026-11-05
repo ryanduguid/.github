@@ -10,8 +10,9 @@ the result you expected and the result you received.
 For a wrong rate, threshold, date or rule in a page, guide or skill, use the
 content correction form: quote the statement and cite the primary source.
 
-Do not attach or paste client, taxpayer, employee, payroll, tenant, credential
-or other sensitive data. Replace it with synthetic values that preserve only
+Do not paste client, taxpayer, employee, payroll, tenant, credential or other
+sensitive data, or taxpayer identifiers such as tax file numbers. Do not attach
+confidential files. Replace real data with synthetic values that preserve only
 the shape needed to reproduce the problem.
 
 ## Security vulnerabilities

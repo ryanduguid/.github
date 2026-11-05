@@ -9,14 +9,16 @@ body:
         skill or a README. For a wrong number or file from a command, use the
         bug form, which asks for a reproduction.
 
-        Do not paste client, taxpayer, employee or payroll data, or credentials.
+        Do not paste client, taxpayer, employee or payroll data, taxpayer
+        identifiers such as tax file numbers, or credentials. Do not attach
+        confidential files.
 
   - type: checkboxes
     id: data-boundary
     attributes:
       label: Data boundary
       options:
-        - label: This report contains no client, taxpayer, employee or payroll data and no credentials.
+        - label: This report contains no client, taxpayer, employee or payroll data, no taxpayer identifiers, no credentials and no confidential attachments.
           required: true
 
   - type: input

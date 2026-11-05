@@ -20,19 +20,28 @@
 
 </div>
 
+`.github` is the community health repository for
+[@ryanduguid](https://github.com/ryanduguid): default community health files
+for anyone reporting to or contributing to the account's repositories, including
+issue forms, a private vulnerability report form, a pull request template and
+contributing, security, support and accessibility policies.
+
 GitHub applies these account-level defaults to every repository owned by
-[@ryanduguid](https://github.com/ryanduguid), public or private, that does not
-provide its own version. The defaults do not appear in that repository's file
-browser or Git history.
+@ryanduguid, public or private, that does not provide its own version. The
+defaults do not appear in that repository's file browser or Git history.
 
 The issue and pull request templates require fabricated examples and keep
 client, taxpayer, employee, payroll, credential and other sensitive data out of
-public project discussions.
+public project discussions. The issue forms and the private vulnerability report
+form also refuse taxpayer identifiers and confidential files.
 
 ## What a repository inherits
 
+A `ryanduguid` repository without its own copy inherits 11 files from `.github`:
+
 | File | What it does |
 | --- | --- |
+| `ACCESSIBILITY.md` | States the accessibility aims and known barriers, and how to report a barrier. It makes no conformance claim. |
 | `CODE_OF_CONDUCT.md` | Sets the behaviour standard for issues, pull requests and discussions, including the rule against posting someone else's real data. |
 | `CONTRIBUTING.md` | Explains how to strip data before opening anything and which issue form to use. It requires a primary-source citation for any changed rate, threshold or deadline. |
 | `SECURITY.md` | Points a suspected vulnerability at the affected repository's private reporting feature instead of a public issue, and states the acknowledgement window. |
@@ -41,10 +50,13 @@ public project discussions.
 | `.github/ISSUE_TEMPLATE/content_correction.yml` | The correction form for a wrong statement in a page, guide or skill: a data-boundary checkbox, where it is, the exact wording and the correct position with its primary source. |
 | `.github/ISSUE_TEMPLATE/feature_request.yml` | The feature or change form: a data-boundary checkbox, the workflow problem it solves and the proposal. |
 | `.github/ISSUE_TEMPLATE/config.yml` | Turns off blank issues and offers the contact links for a security report and for tax or accounting advice. |
+| `.github/VULNERABILITY_REPORT.yml` | The private vulnerability report form: a data-boundary checkbox, then the summary, details, proof of concept, impact and any suggested mitigation. |
 | `.github/PULL_REQUEST_TEMPLATE.md` | The pull request body: what changes, why with a primary source, verification commands and results, a final review tied to the head commit, and the merge checklist. |
 
 A repository's own copy of any of these files overrides the default, and GitHub
-then ignores the version here for that repository.
+then ignores the version here for that repository. A repository with its own
+`.github/ISSUE_TEMPLATE` folder uses none of the default forms, so its forms need
+the same data wording.
 
 The [shared review process](docs/pr-review-process.md) explains the final record
 and the evidence needed to assess reviewer usefulness and cost. Repositories

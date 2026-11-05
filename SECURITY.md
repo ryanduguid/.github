@@ -22,8 +22,10 @@ security policy, so report it there; use the address above only for something
 introduced by this account's changes.
 
 Include a clear description, reproduction steps using fabricated data, likely
-impact, and any suggested mitigation. Never include client, taxpayer, employee,
-payroll, access-token or other sensitive data.
+impact, and any suggested mitigation; the private report form asks for the same.
+Never include client, taxpayer, employee, payroll, access-token or other
+sensitive data, or taxpayer identifiers such as tax file numbers. Do not attach
+confidential files.
 
 We will acknowledge a valid report within 7 days and coordinate the fix and
 disclosure timeline with the reporter.
