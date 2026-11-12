@@ -1,6 +1,7 @@
 name: Feature or change request
 description: Propose a new capability, or a change to how an existing one behaves.
 labels: ["enhancement"]
+type: Feature
 body:
   - type: markdown
     attributes:
