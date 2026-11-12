@@ -1,6 +1,7 @@
 name: Content correction
 description: A page, guide or skill states a rate, threshold, date or rule wrongly, or cites a superseded source.
 labels: ["documentation"]
+type: Bug
 body:
   - type: markdown
     attributes:
