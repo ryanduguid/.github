@@ -49,21 +49,24 @@ jobs:
               "https://img.shields.io/ossf-scorecard/github.com/${repo}?label=${label}&labelColor=000000&style=flat" &&
               grep -q '<title>[^:<]*: [0-9.]*</title>' new.svg; then
               mv new.svg "${repo}.svg"
+              # shortcut: yungSNAT READMEs still show EquityBot/<name>.svg, the path from before the
+              # account was renamed. Drop this copy once every README reads yungSNAT/<name>.svg.
+              case "$repo" in yungSNAT/*) mkdir -p EquityBot && cp "${repo}.svg" "EquityBot/${repo#*/}.svg" ;; esac
             else
               echo "::error::No Scorecard score for ${repo}"
               rm -f new.svg
               status=1
             fi
           done <<'REPOS'
-          EquityBot/DiogenesLamp Scorecard
-          EquityBot/GhostSoap Scorecard
-          EquityBot/Alcuin Scorecard
-          EquityBot/ApollinaireASCII Scorecard
-          EquityBot/GrievousGreps Scorecard
-          EquityBot/Laconic Scorecard
-          EquityBot/PascalsLetter Scorecard
-          EquityBot/PlutarchPages Scorecard
-          EquityBot/Puritanical Scorecard
+          yungSNAT/DiogenesLamp Scorecard
+          yungSNAT/GhostSoap Scorecard
+          yungSNAT/Alcuin Scorecard
+          yungSNAT/ApollinaireASCII Scorecard
+          yungSNAT/GrievousGreps Scorecard
+          yungSNAT/Laconic Scorecard
+          yungSNAT/PascalsLetter Scorecard
+          yungSNAT/PlutarchPages Scorecard
+          yungSNAT/Puritanical Scorecard
           NanoNets/Graft openssf%20scorecard
           ryanduguid/.github Scorecard
           ryanduguid/Ozzit Scorecard
