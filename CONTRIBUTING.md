@@ -51,6 +51,14 @@ the email address to use instead.
 - Install the attribution workflow and its required check in each new maintained
   repository. GitHub does not inherit workflow enforcement from this file.
 
+## AI-assisted contributions
+
+You may use AI tools to prepare a contribution. Whatever tools you used:
+
+- you can explain the change in your own words;
+- you answer review questions yourself;
+- you are responsible for every line you submit.
+
 ## What these projects will not do
 
 They produce evidence for a human reviewer. They do not post journals, move

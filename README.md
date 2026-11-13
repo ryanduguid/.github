@@ -50,7 +50,7 @@ A `ryanduguid` repository can inherit up to 11 files from `.github`, subject to 
 | --- | --- |
 | `ACCESSIBILITY.md` | States the accessibility aims and known barriers, and how to report a barrier. It makes no conformance claim. |
 | `CODE_OF_CONDUCT.md` | Sets the behaviour standard for issues, pull requests and discussions, including the rule against posting someone else's real data. |
-| `CONTRIBUTING.md` | Explains how to strip data before opening anything and which issue form to use. It requires a primary-source citation for any changed rate, threshold or deadline. |
+| `CONTRIBUTING.md` | Explains how to strip data before opening anything and which issue form to use. It requires a primary-source citation for any changed rate, threshold or deadline, and says what a contributor who uses AI tools is responsible for. |
 | `SECURITY.md` | Points a suspected vulnerability at the affected repository's private reporting feature instead of a public issue, and states the acknowledgement window. |
 | `SUPPORT.md` | Routes bug reports, security reports and tax or accounting questions to the right channel, and says what these repositories are not. |
 | `.github/ISSUE_TEMPLATE/bug_report.yml` | The bug form: a data-boundary checkbox, the actual result, the reproduction command and the smallest fabricated input. |
