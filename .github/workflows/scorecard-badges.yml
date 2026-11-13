@@ -52,6 +52,9 @@ jobs:
               # shortcut: yungSNAT READMEs still show EquityBot/<name>.svg, the path from before the
               # account was renamed. Drop this copy once every README reads yungSNAT/<name>.svg.
               case "$repo" in yungSNAT/*) mkdir -p EquityBot && cp "${repo}.svg" "EquityBot/${repo#*/}.svg" ;; esac
+              # shortcut: PaulGoodman's README still shows its pre-rename path. Drop this copy
+              # once it reads ryanduguid/PaulGoodman.svg.
+              if [ "$repo" = ryanduguid/PaulGoodman ]; then cp "${repo}.svg" ryanduguid/au-tax-legislation-corpus.svg; fi
             else
               echo "::error::No Scorecard score for ${repo}"
               rm -f new.svg
@@ -70,10 +73,10 @@ jobs:
           NanoNets/Graft openssf%20scorecard
           ryanduguid/.github Scorecard
           ryanduguid/Ozzit Scorecard
+          ryanduguid/PaulGoodman Scorecard
           ryanduguid/accounting-review-pipeline Scorecard
           ryanduguid/au-accounting-hotkeys Scorecard
           ryanduguid/au-fpa-pack Scorecard
-          ryanduguid/au-tax-legislation-corpus Scorecard
           ryanduguid/australian-accounting Scorecard
           ryanduguid/australian-accounting-skills Scorecard
           ryanduguid/github-agent-skills Scorecard
