@@ -52,9 +52,10 @@ jobs:
               # shortcut: yungSNAT READMEs still show EquityBot/<name>.svg, the path from before the
               # account was renamed. Drop this copy once every README reads yungSNAT/<name>.svg.
               case "$repo" in yungSNAT/*) mkdir -p EquityBot && cp "${repo}.svg" "EquityBot/${repo#*/}.svg" ;; esac
-              # shortcut: PaulGoodman's README still shows its pre-rename path. Drop this copy
-              # once it reads ryanduguid/PaulGoodman.svg.
+              # shortcut: the PaulGoodman and DrDebits READMEs still show their pre-rename paths.
+              # Drop each copy once its README reads the new name.
               if [ "$repo" = ryanduguid/PaulGoodman ]; then cp "${repo}.svg" ryanduguid/au-tax-legislation-corpus.svg; fi
+              if [ "$repo" = ryanduguid/DrDebits ]; then cp "${repo}.svg" ryanduguid/llm-tax-guardrails.svg; fi
             else
               echo "::error::No Scorecard score for ${repo}"
               rm -f new.svg
@@ -72,6 +73,7 @@ jobs:
           yungSNAT/Puritanical Scorecard
           NanoNets/Graft openssf%20scorecard
           ryanduguid/.github Scorecard
+          ryanduguid/DrDebits Scorecard
           ryanduguid/Ozzit Scorecard
           ryanduguid/PaulGoodman Scorecard
           ryanduguid/accounting-review-pipeline Scorecard
@@ -80,7 +82,6 @@ jobs:
           ryanduguid/australian-accounting Scorecard
           ryanduguid/australian-accounting-skills Scorecard
           ryanduguid/github-agent-skills Scorecard
-          ryanduguid/llm-tax-guardrails Scorecard
           ryanduguid/release-policy Scorecard
           ryanduguid/ryanduguid.github.io Scorecard
           REPOS
