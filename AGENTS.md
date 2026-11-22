@@ -12,6 +12,9 @@ files and report any schema checks not run.
 Update `.githooks/commit-msg` and `tests/test_commit_msg_hook.sh` together from
 one release-policy commit, then run `bash tests/test_commit_msg_hook.sh`.
 
+Install the attribution workflow and its required check in each new maintained
+repository: GitHub does not inherit workflow enforcement from `CONTRIBUTING.md`.
+
 This `AGENTS.md` governs work in this repository. It does not install agent
 instructions in the other repositories that use the community defaults.
 
