@@ -48,8 +48,6 @@ the email address to use instead.
 - Pass the required `Attribution policy` check before merging. It runs from the
   trusted base branch. `Attribution audit` is a separate result for manual and
   main-branch audits and cannot approve a pull request.
-- Install the attribution workflow and its required check in each new maintained
-  repository. GitHub does not inherit workflow enforcement from this file.
 
 ## AI-assisted contributions
 
