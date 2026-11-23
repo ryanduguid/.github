@@ -57,6 +57,19 @@ You may use AI tools to prepare a contribution. Whatever tools you used:
 - you answer review questions yourself;
 - you are responsible for every line you submit.
 
+### For reviewers
+
+You may use AI tools whilst reviewing a pull request. Whatever tools you used:
+
+- you read the diff and affected files yourself before posting a review;
+- you verify every finding, source reference and suggested fix against the
+  current code and leave out unverified generated output;
+- you state plainly in the review when an AI tool assisted, without adding AI
+  identities or authorship credits to commits or pull requests;
+- you keep real client, taxpayer and credential data out of external tools;
+- you remain responsible for every comment and approval you submit, because
+  automated checks and bot comments do not replace human review.
+
 ## What these projects will not do
 
 They produce evidence for a human reviewer. They do not post journals, move
