@@ -36,6 +36,11 @@ jobs:
           ref: 6da4f8eed08a73486ba279c6f972a4e5a2e5a110
           path: .laconic
           persist-credentials: false
+      - name: Cache laconic-check build
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+        with:
+          workspaces: .laconic/tools/laconic-check
+          save-if: ${{ github.ref == 'refs/heads/main' }}
       - name: Build laconic-check
         run: cargo build --release --locked --manifest-path .laconic/tools/laconic-check/Cargo.toml
       - name: Lint Markdown prose
