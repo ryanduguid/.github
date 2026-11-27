@@ -11,7 +11,6 @@ hook's own line numbers and exits 1 unless every measured line ran.
 import json
 import os
 import sys
-import xml.etree.ElementTree as ET
 
 
 def main(hook, out):
@@ -29,14 +28,12 @@ def main(hook, out):
 
     hits = {}
     # kcov counts here-document lines and the closing delimiter as shell code.
-    tree = ET.parse(os.path.join(out, "kcov", "commit-msg", "cobertura.xml"))
-    for cls in tree.iter("class"):
-        if os.path.basename(cls.get("filename")) != os.path.basename(hook):
-            continue
-        for line in cls.iter("line"):
-            number = int(line.get("number"))
-            if not first <= number <= last + 1:
-                hits[number] = hits.get(number, 0) + int(line.get("hits"))
+    with open(os.path.join(out, "kcov", "commit-msg", "codecov.json"), encoding="utf-8") as handle:
+        (shell,) = json.load(handle)["coverage"].values()
+    for number, count in shell.items():
+        number = int(number)
+        if not first <= number <= last + 1:
+            hits[number] = int(count)
 
     with open(os.path.join(out, "python.json"), encoding="utf-8") as handle:
         files = json.load(handle)["files"]
