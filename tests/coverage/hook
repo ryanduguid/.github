@@ -1,0 +1,6 @@
+#!/bin/sh
+# The hook as the tests see it while tests/coverage/measure.sh runs: the real
+# .githooks/commit-msg under kcov, which adds each run to one report. Absolute
+# paths only, as one test empties PATH.
+exec "$HOOK_COVERAGE_KCOV" --include-path="$HOOK_COVERAGE_REPO/.githooks" \
+	"$HOOK_COVERAGE_DIR/kcov" "$HOOK_COVERAGE_REPO/.githooks/commit-msg" "$@"

@@ -27,6 +27,81 @@ jobs:
       # both from the same release-policy commit.
       - name: Test the commit-msg hook
         run: bash tests/test_commit_msg_hook.sh
+      - name: Run this repository's extra hook cases
+        run: bash tests/test_commit_msg_hook_cases.sh
+
+  # kcov reads the hook's shell lines and coverage.py its Python checker;
+  # measure.sh joins them and fails this job below 100% of lines. Ubuntu ships
+  # no kcov package, so the current stable release is built from its source.
+  coverage:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    env:
+      KCOV_VERSION: "43"
+      # Computed from the v43 source tarball at pin time; kcov publishes no
+      # checksums file.
+      KCOV_SHA256: "4cbba86af11f72de0c7514e09d59c7927ed25df7cebdad087f6d3623213b95bf"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.15"
+          allow-prereleases: true
+      - name: Build kcov from its verified source
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends binutils-dev cmake libcurl4-openssl-dev \
+            libdw-dev libelf-dev libiberty-dev libssl-dev zlib1g-dev
+          cd "$RUNNER_TEMP"
+          curl --proto '=https' --proto-redir '=https' -fsSL -o kcov.tar.gz \
+            "https://github.com/SimonKagstrom/kcov/archive/refs/tags/v${KCOV_VERSION}.tar.gz"
+          echo "${KCOV_SHA256}  kcov.tar.gz" | sha256sum --check
+          tar -xzf kcov.tar.gz
+          cmake -S "kcov-${KCOV_VERSION}" -B kcov-build -DCMAKE_INSTALL_PREFIX="$RUNNER_TEMP/kcov"
+          cmake --build kcov-build --parallel
+          cmake --install kcov-build
+      - name: Install coverage.py
+        run: |
+          python -m venv "$RUNNER_TEMP/coverage-venv"
+          "$RUNNER_TEMP/coverage-venv/bin/python" -m pip install --only-binary :all: --require-hashes \
+            --requirement requirements-coverage.txt
+      - name: Measure the hook's line coverage
+        run: |
+          KCOV="$RUNNER_TEMP/kcov/bin/kcov" PYTHON="$RUNNER_TEMP/coverage-venv/bin/python" \
+            bash tests/coverage/measure.sh
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: coverage-codecov
+          path: coverage/commit-msg.lcov
+          if-no-files-found: error
+
+  # The upload runs apart from the tests so the OIDC token is never available
+  # while test code runs. A fork's pull request gets no OIDC token.
+  codecov:
+    name: upload coverage to Codecov
+    needs: coverage
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # Authenticate the Codecov upload with OIDC; no stored token.
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: coverage-codecov
+      - uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          use_oidc: true
+          files: commit-msg.lcov
+          disable_search: true
+          fail_ci_if_error: true
 
   # Not a required check, so a hook change in release-policy flags these copies
   # without blocking unrelated pull requests here.

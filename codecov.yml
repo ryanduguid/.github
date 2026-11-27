@@ -1,0 +1,15 @@
+# Codecov reports the commit-msg hook's line coverage and holds it at 100%:
+# both the project and the patch status fail below that. Codecov posts no
+# comments.
+coverage:
+  round: down
+  status:
+    project:
+      default:
+        target: 100%
+        threshold: 0%
+        if_not_found: failure
+    patch:
+      default:
+        target: 100%
+comment: false
