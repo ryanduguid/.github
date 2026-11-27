@@ -11,6 +11,9 @@ files and report any schema checks not run.
 
 Update `.githooks/commit-msg` and `tests/test_commit_msg_hook.sh` together from
 one release-policy commit, then run `bash tests/test_commit_msg_hook.sh`.
+Cases kept only here go in `tests/test_commit_msg_hook_cases.sh`; the hook
+workflow's coverage job (`tests/coverage/measure.sh`) fails below 100% of the
+hook's lines.
 
 Install the attribution workflow and its required check in each new maintained
 repository: GitHub does not inherit workflow enforcement from `CONTRIBUTING.md`.

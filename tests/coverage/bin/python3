@@ -1,0 +1,14 @@
+#!/bin/sh
+# Stands in for python3 on PATH while tests/coverage/measure.sh runs. The hook
+# pipes its checker to `python3 -I -`; coverage.py needs that script in a file
+# to map its lines, so the same bytes are written to one fixed path and run
+# from there, still isolated. Any other call passes straight through. Only
+# absolute paths are used, as a test may narrow PATH.
+set -eu
+if [ "$#" -eq 2 ] && [ "$1" = -I ] && [ "$2" = - ]; then
+	"$HOOK_COVERAGE_PYTHON" -I -c 'import shutil, sys; shutil.copyfileobj(sys.stdin.buffer, open(sys.argv[1], "wb"))' \
+		"$HOOK_COVERAGE_DIR/commit-msg.py"
+	exec "$HOOK_COVERAGE_PYTHON" -I -m coverage run --parallel-mode \
+		--data-file="$HOOK_COVERAGE_DIR/python.coverage" "$HOOK_COVERAGE_DIR/commit-msg.py"
+fi
+exec "$HOOK_COVERAGE_PYTHON" "$@"
